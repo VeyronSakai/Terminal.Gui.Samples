@@ -11,8 +11,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Cocona" Version="2.2.0"/>
-        <PackageReference Include="Terminal.Gui" Version="1.12.1"/>
+        <PackageReference Include="Cocona" Version="2.2.0" />
+        <PackageReference Include="Terminal.Gui" Version="1.12.1" />
     </ItemGroup>
 
 </Project>
