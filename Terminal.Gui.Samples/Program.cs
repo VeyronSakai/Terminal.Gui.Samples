@@ -7,6 +7,6 @@ cli.AddCommand("test",
     () => Console.WriteLine("test")
 ).WithDescription("test command");
 
-OfficialCommandProvider.Provide(cli);
+OfficialSampleProvider.Provide(cli);
 
 cli.Run();

@@ -2,7 +2,7 @@ using Cocona;
 
 namespace Terminal.Gui.Samples;
 
-internal static class OfficialCommandProvider
+internal static class OfficialSampleProvider
 {
     internal static void Provide(CoconaApp app)
     {
