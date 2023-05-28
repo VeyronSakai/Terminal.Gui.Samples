@@ -62,7 +62,27 @@ cli.AddCommand("menu", () =>
     };
 
     // Add both menu and win in a single call
-    Application.Top.Add(menu, win)g;
+    Application.Top.Add(menu, win);
+    Application.Run();
+    Application.Shutdown();
+});
+
+cli.AddCommand("layout", () =>
+{
+    Application.Init();
+    // Dynamically computed
+    var label = new Label("Hello")
+    {
+        X = 1,
+        Y = Pos.Center(),
+        Width = 1,
+        Height = 1
+    };
+
+    // // Absolute position using the provided rectangle
+    var label2 = new Label(new Rect(1, 2, 20, 1), "World");
+
+    Application.Top.Add(label, label2);
     Application.Run();
     Application.Shutdown();
 });
