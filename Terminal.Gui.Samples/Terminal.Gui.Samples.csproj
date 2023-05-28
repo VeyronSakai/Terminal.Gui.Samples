@@ -5,6 +5,14 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <PackAsTool>true</PackAsTool>
+        <ToolCommandName>gsmpl</ToolCommandName>
+        <AssemblyName>gsmpl</AssemblyName>
     </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Cocona" Version="2.2.0"/>
+        <PackageReference Include="Terminal.Gui" Version="1.12.1"/>
+    </ItemGroup>
 
 </Project>
