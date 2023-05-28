@@ -87,4 +87,47 @@ cli.AddCommand("layout", () =>
     Application.Shutdown();
 });
 
+cli.AddCommand("edit", ([Argument] string filePath) =>
+{
+    Application.Init();
+    var top = new Toplevel()
+    {
+        X = 0,
+        Y = 0,
+        Width = Dim.Fill(),
+        Height = Dim.Fill()
+    };
+    var menu = new MenuBar(new MenuBarItem[]
+    {
+        new("_File", new[]
+        {
+            new MenuItem("_Close", "", () => { Application.RequestStop(); })
+        }),
+    });
+
+    // nest a window for the editor
+    var win = new Window(filePath)
+    {
+        X = 0,
+        Y = 1,
+        Width = Dim.Fill(),
+        Height = Dim.Fill() - 1
+    };
+
+    var editor = new TextView()
+    {
+        X = 0,
+        Y = 0,
+        Width = Dim.Fill(),
+        Height = Dim.Fill()
+    };
+    editor.Text = System.IO.File.ReadAllText(filePath);
+    win.Add(editor);
+
+    // Add both menu and win in a single call
+    top.Add(win, menu);
+    Application.Run(top);
+    Application.Shutdown();
+});
+
 cli.Run();
