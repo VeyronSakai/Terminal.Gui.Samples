@@ -27,4 +27,19 @@ cli.AddCommand("msg-box", () =>
     }
 });
 
+cli.AddCommand("top", () =>
+{
+    Application.Init();
+    var label = new Label("Hello, World")
+    {
+        X = Pos.Center(),
+        Y = Pos.Center(),
+        Height = 1,
+    };
+
+    Application.Top.Add(label);
+    Application.Run();
+    Application.Shutdown();
+});
+
 cli.Run();
