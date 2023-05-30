@@ -8,6 +8,8 @@
         <PackAsTool>true</PackAsTool>
         <ToolCommandName>gsmpl</ToolCommandName>
         <AssemblyName>gsmpl</AssemblyName>
+        <Version>0.1.0</Version>
+        <PackageOutputPath>./nupkg</PackageOutputPath>
     </PropertyGroup>
 
     <ItemGroup>
