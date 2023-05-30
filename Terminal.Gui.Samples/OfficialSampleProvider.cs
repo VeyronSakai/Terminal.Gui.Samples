@@ -130,6 +130,27 @@ internal static class OfficialSampleProvider
                 Application.Run(top);
                 Application.Shutdown();
             }).WithDescription("show the content of the specified file");
+
+            x.AddCommand("dialog", () =>
+            {
+                Application.Init();
+
+                var isOkPressed = false;
+                var okButton = new Button("OK");
+                var cancelButton = new Button("Cancel");
+                okButton.Clicked += () =>
+                {
+                    isOkPressed = true;
+                    Application.RequestStop();
+                };
+
+                cancelButton.Clicked += () => Application.RequestStop();
+
+                var dialog = new Dialog("Quit", 60, 7, okButton, cancelButton);
+                Application.Run(dialog);
+                Application.Shutdown();
+                Console.WriteLine(isOkPressed ? "OK!" : "Cancelled");
+            }).WithDescription("show the content of the specified file");
         }).WithDescription("official command samples");
     }
 }
