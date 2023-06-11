@@ -4,9 +4,9 @@ namespace Terminal.Gui.Samples;
 
 internal static class OfficialSampleProvider
 {
-    internal static void Provide(CoconaApp app)
+    internal static void AddOfficialCommands(this CoconaApp cli)
     {
-        app.AddSubCommand("official", x =>
+        cli.AddSubCommand("official", x =>
         {
             x.AddCommand("msg-box", () =>
             {
