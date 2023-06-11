@@ -1,10 +1,10 @@
 using Cocona;
 
-namespace Terminal.Gui.Samples;
+namespace Terminal.Gui.Samples.Presentation;
 
-internal static class OfficialSampleProvider
+internal static class OfficialCommandBuilder
 {
-    internal static void AddOfficialCommands(this CoconaApp cli)
+    internal static void AddOfficialCommand(this CoconaApp cli)
     {
         cli.AddSubCommand("official", x =>
         {
